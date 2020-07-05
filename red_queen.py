@@ -72,7 +72,7 @@ def search_google(cmd):
         subgoogle = reg_ex.group(1)
         url = url + 'r/' + subgoogle
     talk("Okay!")
-    driver = webdriver.Firefox(executable_path="/home/dark/geckodriver")
+    driver = webdriver.Firefox(executable_path="/home/abcd/geckodriver")  # add geckodriver executabe path
     driver.get("http://www.google.com")
     search = driver.find_element_by_name("q")
     search.send_keys(str(search_for))
@@ -119,7 +119,7 @@ def email():
     mail.starttls()
 
     # login
-    mail.login("username_gmail", "password_gmail")
+    mail.login("username_gmail", "password_gmail")  # add username and password
 
     # send message
     mail.sendmail("FROM", "TO", content)
@@ -179,7 +179,7 @@ def write_note():
 
 def show_note():
     talk("Showing Notes")
-    file = open("red.txt", "r")
+    file = open("RQ.txt", "r")
     print(file.read())
     talk(file.read(6))
 
@@ -203,7 +203,7 @@ def youtube(cmd):
 
 def weather(cmd):
     city = cmd.split("in", 1)[1]
-    owm = OWM(API_key='ab0d5e80e8dafb2cb81fa9e82431c1fa')
+    owm = OWM(API_key='')  # create your own owm key
     obs = owm.weather_at_place(city)
     w = obs.get_weather()
     k = w.get_status()
@@ -235,7 +235,7 @@ def launch(cmd):
 
 def wolfram(cmd):
     reg_ex = re.search('me (.*)', cmd)
-    app_id = 'VKJR3P-UA98EWAJHE'
+    app_id = ''  # create your own wolfrom aplha key
     client = wolframalpha.Client(app_id)
     if reg_ex:
         ques = reg_ex.group(1)
@@ -370,12 +370,4 @@ while True:
     time.sleep(4)
     red_queen(myCommand())
    
-        
-
-#(start)->(voice input)
-#(voice input) [speech recognition]->(command given)
-#(command given)[given command]->(execute command)
-#(command given)[Stop]->(end)
-#(execute command)[output]->(use gtts)
-#(use gtts)[convert text to speech]->(tell the user)
-#(tell the user)->(start)
+      
