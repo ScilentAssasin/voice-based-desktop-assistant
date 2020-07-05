@@ -1,5 +1,5 @@
 # voice-based-desktop-assistant
-A simple voice based assistant
+A simple voice based assistant (Red Queen)
 
 This project is made with python-3.x and is tested on ubuntu 20.04
 
